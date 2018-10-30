@@ -3,7 +3,7 @@ package com.alevel.models;
 import com.alevel.constants.Gender;
 import com.alevel.Utils;
 
-public class Person {
+public class Person implements Comparable<Person>{
     private String name;
     private int age;
     private Gender gender;
@@ -34,5 +34,10 @@ public class Person {
                 ", age=" + age +
                 ", gender=" + gender +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return name.compareTo(o.getName());
     }
 }
